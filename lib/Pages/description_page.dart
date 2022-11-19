@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:proyectofinal_emmanuelrios/models/response_comics.dart';
-import 'package:proyectofinal_emmanuelrios/widgets/item_fondo.dart';
+import 'package:marvel_comics/models/response_comics.dart';
+import 'package:marvel_comics/widgets/item_fondo.dart';
 import 'package:provider/provider.dart';
-import 'package:proyectofinal_emmanuelrios/Provider/favorite_provider.dart';
+import 'package:marvel_comics/Provider/favorite_provider.dart';
 
 class DescriptionComic extends StatelessWidget {
   @override
@@ -10,17 +10,19 @@ class DescriptionComic extends StatelessWidget {
     final comicInfo = ModalRoute.of(context)!.settings.arguments as Comic;
 
     final providerFavoritesComics =
-    Provider.of<ComicsFavoritesProvider>(context);
+        Provider.of<ComicsFavoritesProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(27, 126, 111, 1.0),
+        backgroundColor: Color.fromARGB(255, 184, 18, 6),
         centerTitle: true,
         title: const Text(
           "COMIC DESCRIPTION",
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 40,
             color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Bebas-Regular',
           ),
         ),
       ),
@@ -30,7 +32,6 @@ class DescriptionComic extends StatelessWidget {
           ListView(
             children: [
               Container(
-                color: Color.fromRGBO(27, 126, 111, 1.0),
                 padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
@@ -40,12 +41,15 @@ class DescriptionComic extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.only(bottom: 1),
-                            child: Text(
-                              comicInfo.title,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 23,
-                                color: Colors.white,
+                            child: Center(
+                              child: Text(
+                                comicInfo.title,
+                                style: const TextStyle(
+                                  fontSize: 35,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Bebas-Regular',
+                                ),
                               ),
                             ),
                           ),
@@ -58,25 +62,28 @@ class DescriptionComic extends StatelessWidget {
               Image.network(
                 comicInfo.getFullPoster(),
                 width: 600,
-                height: 330,
-                fit: BoxFit.cover,
+                height: 600,
               ),
               IconButton(
                 onPressed: () {
                   providerFavoritesComics.addComic(comicInfo);
                 },
                 icon: Icon(
-                  Icons.favorite_outline,
-                  size: 40,
+                  Icons.favorite,
+                  size: 80,
+                  color: Color.fromARGB(239, 223, 6, 6),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.all(25),
-                child: const Text(
-                    '',
-                  softWrap: true,
-                  style: TextStyle(
-                    color: Colors.white,
+                padding: EdgeInsets.all(80),
+                child: Center(
+                  child: Text(
+                    comicInfo.description,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontFamily: 'Bebas-Regular',
+                    ),
                   ),
                 ),
               ),
