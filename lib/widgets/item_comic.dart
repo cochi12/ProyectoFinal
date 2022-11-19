@@ -32,13 +32,9 @@ class ItemComic extends StatelessWidget {
           title: Text(
             comic.title,
             style: const TextStyle(
-              color: Colors.white,
+              color: Color.fromRGBO(27, 126, 111, 1.0),
               fontSize: 23,
             ),
-          ),
-          trailing: IconButton (
-            icon: Icon(Icons.favorite),
-            onPressed: () {},
           ),
         ),
       ),

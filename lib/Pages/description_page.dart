@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:proyectofinal_emmanuelrios/models/response_comics.dart';
 import 'package:proyectofinal_emmanuelrios/widgets/item_fondo.dart';
+import 'package:provider/provider.dart';
+import 'package:proyectofinal_emmanuelrios/Provider/favorite_provider.dart';
 
 class DescriptionComic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final comicInfo = ModalRoute.of(context)!.settings.arguments as Comic;
+
+    final providerFavoritesComics =
+    Provider.of<ComicsFavoritesProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -55,6 +60,15 @@ class DescriptionComic extends StatelessWidget {
                 width: 600,
                 height: 330,
                 fit: BoxFit.cover,
+              ),
+              IconButton(
+                onPressed: () {
+                  providerFavoritesComics.addComic(comicInfo);
+                },
+                icon: Icon(
+                  Icons.favorite_outline,
+                  size: 40,
+                ),
               ),
               Container(
                 padding: const EdgeInsets.all(25),

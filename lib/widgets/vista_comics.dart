@@ -25,7 +25,7 @@ class vistaComics extends StatelessWidget {
               const SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
-                  itemCount: Constants.listComicsFake.length,
+                  itemCount: Constants.listComics.length,
                   itemBuilder: (context, index) {
                     final comic = snapshot.data![index];
                     return ItemComic(
