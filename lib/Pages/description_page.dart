@@ -14,7 +14,7 @@ class DescriptionComic extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 184, 18, 6),
+        backgroundColor: const Color.fromARGB(255, 184, 18, 6),
         centerTitle: true,
         title: const Text(
           "COMIC DESCRIPTION",
@@ -68,18 +68,18 @@ class DescriptionComic extends StatelessWidget {
                 onPressed: () {
                   providerFavoritesComics.addComic(comicInfo);
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.favorite,
                   size: 80,
                   color: Color.fromARGB(239, 223, 6, 6),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(80),
+                padding: const EdgeInsets.all(80),
                 child: Center(
                   child: Text(
                     comicInfo.description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                       fontFamily: 'Bebas-Regular',

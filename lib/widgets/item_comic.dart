@@ -33,7 +33,7 @@ class ItemComic extends StatelessWidget {
               fontSize: 23,
             ),
           ),
-          trailing: Icon(
+          trailing: const Icon(
             Icons.arrow_forward_ios,
             size: 25,
             color: Color.fromARGB(239, 223, 6, 6),

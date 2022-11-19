@@ -23,6 +23,6 @@ Future<List<Comic>> apiComics() async {
     final results = responseComics.data.results;
     return results;
   } else {
-    throw Exception('Error al obtener la lista de comics');
+    throw Exception('Error getting the list of comics');
   }
 }

@@ -4,8 +4,6 @@ import 'package:marvel_comics/models/constants.dart';
 import 'package:marvel_comics/models/response_comics.dart';
 import 'package:marvel_comics/widgets/item_comic.dart';
 import 'package:marvel_comics/api/comics_api.dart';
-import 'package:provider/provider.dart';
-import '../Provider/favorite_provider.dart';
 
 class vistaComics extends StatelessWidget {
   @override

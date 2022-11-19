@@ -3,7 +3,6 @@ import 'package:marvel_comics/Pages/description_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:marvel_comics/Provider/favorite_provider.dart';
-import 'package:marvel_comics/Pages/favorite_page.dart';
 
 void main() {
   runApp(PaginaPrincipal());

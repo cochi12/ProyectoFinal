@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 import 'package:marvel_comics/Provider/favorite_provider.dart';
 import 'package:provider/provider.dart';
@@ -11,13 +13,13 @@ class FavoritePage extends StatelessWidget {
       body: favoritesComics.listFavoriteList.isNotEmpty
           ? Column(
               children: [
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Expanded(
                   child: ListView.builder(
                     itemCount: favoritesComics.listFavoriteList.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        margin: EdgeInsets.only(bottom: 23),
+                        margin: const EdgeInsets.only(bottom: 23),
                         child: ListTile(
                           leading: Image(
                               image: NetworkImage(favoritesComics
@@ -32,10 +34,10 @@ class FavoritePage extends StatelessWidget {
                 ),
               ],
             )
-          : Center(
-              child: Text(
+          : const Center(
+              child: const Text(
                 'You dont have favorite comics',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Bebas-Regular',

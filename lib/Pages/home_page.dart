@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_comics/widgets/item_fondo.dart';
 import 'package:marvel_comics/widgets/vista_comics.dart';
 import 'package:marvel_comics/Pages/favorite_page.dart';
 
@@ -32,10 +31,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 184, 18, 6),
+        backgroundColor: const Color.fromARGB(255, 184, 18, 6),
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
