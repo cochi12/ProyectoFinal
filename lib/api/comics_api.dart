@@ -1,4 +1,4 @@
-import 'package:proyectofinal_emmanuelrios/models/response_comics.dart';
+import 'package:marvel_comics/models/response_comics.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Comic>> apiComics() async {
@@ -13,11 +13,12 @@ Future<List<Comic>> apiComics() async {
     'apikey': apiKey,
     'ts': ts,
     'hash': hash,
+    'limit': '100',
   });
 
   final response = await http.get(url);
 
-  if(response.statusCode == 200) {
+  if (response.statusCode == 200) {
     final responseComics = responseComicsFromMap(response.body);
     final results = responseComics.data.results;
     return results;

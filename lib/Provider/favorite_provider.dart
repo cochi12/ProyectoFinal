@@ -1,4 +1,4 @@
-import 'package:proyectofinal_emmanuelrios/models/response_comics.dart';
+import 'package:marvel_comics/models/response_comics.dart';
 import 'package:flutter/foundation.dart';
 
 class ComicsFavoritesProvider extends ChangeNotifier {

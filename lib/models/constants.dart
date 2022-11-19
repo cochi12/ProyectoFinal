@@ -1,5 +1,5 @@
 class Constants {
   static List<String> listComics =
-      List.generate(10, (int index) => 'Comic numero $index');
+      List.generate(100, (int index) => 'Comic numero $index');
 }
 

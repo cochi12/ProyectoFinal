@@ -16,10 +16,10 @@ class ResponseComics {
   Data data;
 
   factory ResponseComics.fromMap(Map<String, dynamic> json) => ResponseComics(
-    code: json["code"],
-    status: json["status"],
-    data: Data.fromMap(json["data"]),
-  );
+        code: json["code"],
+        status: json["status"],
+        data: Data.fromMap(json["data"]),
+      );
 }
 
 //Objeto que contendra los resultados que es el arreglo de comics
@@ -31,8 +31,8 @@ class Data {
   List<Comic> results;
 
   factory Data.fromMap(Map<String, dynamic> json) => Data(
-    results: List<Comic>.from(json["results"].map((x) => Comic.fromMap(x))),
-  );
+        results: List<Comic>.from(json["results"].map((x) => Comic.fromMap(x))),
+      );
 }
 
 //Objeto para manejar el comic
@@ -40,15 +40,18 @@ class Comic {
   Comic({
     required this.title,
     required this.poster,
+    required this.description,
   });
 
   String title;
   PosterImage poster;
+  dynamic description;
 
   factory Comic.fromMap(Map<String, dynamic> json) => Comic(
-    title: json["title"],
-    poster: PosterImage.fromMap(json["thumbnail"]),
-  );
+        title: json["title"],
+        poster: PosterImage.fromMap(json["thumbnail"]),
+        description: json["description"] ?? '',
+      );
 
   getFullPoster() {
     return '${poster.path}.jpg';
@@ -64,6 +67,6 @@ class PosterImage {
   String path;
 
   factory PosterImage.fromMap(Map<String, dynamic> json) => PosterImage(
-    path: json["path"],
-  );
+        path: json["path"],
+      );
 }

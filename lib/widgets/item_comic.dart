@@ -1,4 +1,4 @@
-import 'package:proyectofinal_emmanuelrios/models/response_comics.dart';
+import 'package:marvel_comics/models/response_comics.dart';
 import 'package:flutter/material.dart';
 
 class ItemComic extends StatelessWidget {
@@ -9,13 +9,11 @@ class ItemComic extends StatelessWidget {
     required this.comic,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
-      onTap: (){
-       Navigator.pushNamed(context, 'description', arguments: comic);
+      onTap: () {
+        Navigator.pushNamed(context, 'description', arguments: comic);
       },
       child: Container(
         margin: const EdgeInsets.all(12.0),
@@ -32,13 +30,16 @@ class ItemComic extends StatelessWidget {
           title: Text(
             comic.title,
             style: const TextStyle(
-              color: Color.fromRGBO(27, 126, 111, 1.0),
               fontSize: 23,
             ),
+          ),
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            size: 25,
+            color: Color.fromARGB(239, 223, 6, 6),
           ),
         ),
       ),
     );
   }
 }
-

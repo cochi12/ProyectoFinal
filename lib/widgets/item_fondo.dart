@@ -9,7 +9,7 @@ Widget fondoApp() {
         gradient: LinearGradient(
             colors: [
               Color.fromRGBO(33, 9, 40, 1.0),
-              Color.fromRGBO(27, 126, 111, 1.0)
+              Color.fromARGB(255, 184, 18, 6),
             ]
         )
     ),

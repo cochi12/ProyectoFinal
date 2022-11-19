@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proyectofinal_emmanuelrios/widgets/item_fondo.dart';
-import 'package:proyectofinal_emmanuelrios/widgets/vista_comics.dart';
-import 'package:proyectofinal_emmanuelrios/Pages/favorite_page.dart';
+import 'package:marvel_comics/widgets/item_fondo.dart';
+import 'package:marvel_comics/widgets/vista_comics.dart';
+import 'package:marvel_comics/Pages/favorite_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,28 +20,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(27, 126, 111, 1.0),
+        backgroundColor: const Color.fromARGB(255, 184, 18, 6),
         centerTitle: true,
         title: const Text(
           "MARVEL COMICS",
           style: TextStyle(
-            fontSize: 30,
-            color: Colors.white,
+            fontFamily: "Bebas-Regular",
+            fontSize: 50,
           ),
         ),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 184, 18, 6),
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue[500],
+        selectedItemColor: Colors.white,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Inicio',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favoritos',
+            label: 'Favorites',
           ),
         ],
         onTap: (index) {
